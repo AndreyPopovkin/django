@@ -1,0 +1,11 @@
+<form action="{%url 'newTicketForm'%}" method="post">
+{% csrf_token %}
+	<p>Title:</p> <br>
+	<input type="text" name="title" id="title"/> <br>
+	<p>Text:</p> <br>
+	<textarea name="text" id="text"></textarea> <br>
+	<p>Deadline:</p> <br>
+	<input type="datetime-local" name="deadline"/> <br>
+	<br>
+	<input type="submit" value="ОК"/>
+</form>

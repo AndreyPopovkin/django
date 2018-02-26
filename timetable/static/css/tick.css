@@ -1,0 +1,24 @@
+h1 a {
+    color: #FCA205;
+    font-family: 'Lobster';
+}
+
+body {
+    padding-left: 15px;
+}
+
+.page-header {
+    border-collapse: separate; /* Способ отображения границы */ 
+    width: 90%; /* Ширина таблицы */ 
+    border-spacing: 7px 11px; /* Расстояние между ячейками */ 
+    padding-left: 50px;
+}
+
+table {
+    border-collapse: separate; /* Способ отображения границы */ 
+    border-spacing: 7px 11px; /* Расстояние между ячейками */ 
+}
+
+.done-tasks {
+    color: #00aa00;
+}

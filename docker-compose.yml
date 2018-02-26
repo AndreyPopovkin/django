@@ -1,0 +1,25 @@
+version: '2'
+services:
+
+  gunicorn:
+    restart: always
+    build: ./gunicorn/
+    expose:
+      - "8000"
+    volumes:
+      - "static:/static/"
+    command: bash -c "python manage.py collectstatic --noinput && python manage.py makemigrations && python manage.py migrate && /usr/local/bin/gunicorn -w 2 -b :8000 timetable.wsgi"
+
+  nginx:
+    tty: true
+    restart: always
+    build: ./nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - "static:/www/static"
+    links:
+      - gunicorn
+
+volumes:
+  static:

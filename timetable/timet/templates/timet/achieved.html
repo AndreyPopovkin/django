@@ -1,0 +1,15 @@
+{% extends 'timet/base.html' %}
+
+{% block content %}
+    {% for ticket in tickets %}
+        <div>
+            </br>
+            <p>deadline: {{ ticket.deadline }}</p>
+            <p>created: {{ ticket.created_date }}</p>
+            <h3 class="done-tasks">{{ ticket.title }}</h3>
+            <p>{{ ticket.text|linebreaksbr }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+
+{% endblock %}

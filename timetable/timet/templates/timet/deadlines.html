@@ -1,0 +1,28 @@
+{% extends 'timet/base.html' %}
+
+{% block content %}
+    {% for ticket in tickets %}
+        <div>
+            <br>
+            <br>
+            <br>
+            <p>deadline: {{ ticket.deadline }}</p>
+            <p>created: {{ ticket.created_date }}</p>
+            <table>
+            	<td>
+            		<h3>{{ ticket.title }}</h3>
+                </td>
+            	<td>
+		            <form action="{%url 'deadlines'%}" method="post">
+					{% csrf_token %}
+						<br>
+						<input type="submit" name={{ticket.id}} value=done />
+					</form>
+                </td>
+            </table>
+            <p>{{ ticket.text|linebreaksbr }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+
+{% endblock %}
