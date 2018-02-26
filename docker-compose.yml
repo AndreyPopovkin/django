@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  gunicorn:
+  timetable:
     restart: always
-    build: ./gunicorn/
+    build: ./timetable/
     expose:
       - "8000"
     volumes:
@@ -19,7 +19,7 @@ services:
     volumes:
       - "static:/www/static"
     links:
-      - gunicorn
+      - timetable
 
 volumes:
   static:
